@@ -1,0 +1,17 @@
+html
+  header
+    title Login Form
+  body
+    div(style="text-align: center; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)")
+      h1(style="text-align: center; color: tomato") LOGIN FORM
+      form(action="/login", method="POST" style="display: flex; flex-direction: column; align-items: center;")
+        div
+          label(style="margin: 20px") Username:
+          input(type="text", placeholder="admin", name="username" style="padding: 5px 2px; outline: none; border-radius: 5px; border: .5px solid" required)
+        br
+        div
+          label(style="margin: 20px") Password:
+          input(type="password", placeholder="*****", name="password" style="padding: 5px 2px; outline: none; border-radius: 5px; border: .5px solid" required)
+        br
+        input(type="submit", value="Login", style=" padding: 10px 20px; background: tomato; color: white; border: solid .5px gray; border-radius: 5px; cursor: pointer;")
+    a(href='/' style="padding: 5px; height: 50px; width: 50px; line-height: 50px; text-align: center; text-decoration: none; color: white; background: tomato; border: solid .5px gray; border-radius: 50%; position: absolute; top: 20px; left: 20px") HOME

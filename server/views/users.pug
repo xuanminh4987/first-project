@@ -1,0 +1,8 @@
+html
+  head
+    title User List
+  body
+    h3(style="color: tomato;") User List
+    ul
+        each user in users
+            li(id=user.id)= user.name
