@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.5.1.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $('#append-button').click(()=>{
+                $('#text-line').append('<p>Append</p>')
+            })
+
+            $('#prepend-button').click(()=>{
+                $('#text-line').prepend('<p>Prepend</p>')
+            })
+
+            $("#before-button").click(()=>{
+                $('#text-line').before('<h1>Before</h1>')
+            })
+
+            $("#after-button").click(()=>{
+                $('#text-line').after('<h1>After</h1>')
+            })
+        })
+    </script>
+    <title>jQuery</title>
+    
+</head>
+<body>
+    <p id="text-line" style="color: teal;">This <b>TEST</b> line</p>
+
+    <input type="text" name="username" id="username" value="Minhihi">
+
+    <h4>ADD</h4>
+    <button id="append-button">Append</button>
+    <button id="prepend-button">Prepend</button>
+    <button id="before-button">Before</button>
+    <button id="after-button">After</button>
+</body>
+</html>
