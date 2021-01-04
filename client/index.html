@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.5.1.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $('#set-text-button').click(()=>{
+                $('#text-line').text("This FIRST line")
+            })
+
+            $('#set-html-button').click(()=>{
+                $('#text-line').html('This <h1>FIRST</h1> line')
+            })
+
+            $("#set-val-button").click(()=>{
+                $('#username').val("Minhuhu")
+            })
+
+            $("#set-attr-button").click(()=>{
+                $("#text-line").attr("style", "color: tomato;")
+            })
+        })
+    </script>
+    <title>jQuery</title>
+    
+</head>
+<body>
+    <p id="text-line" style="color: teal;">This <b>TEST</b> line</p>
+
+    <input type="text" name="username" id="username" value="Minhihi">
+
+    <h4>SET</h4>
+    <button id="set-text-button">Set Text</button>
+    <button id="set-html-button">Set HTML</button>
+    <button id="set-val-button">Set Value</button>
+    <button id="set-attr-button">Set Attr</button>
+</body>
+</html>
