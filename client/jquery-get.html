@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.5.1.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $('#get-text-button').click(()=>{
+                alert($('#text-line').text())
+            })
+
+            $('#get-html-button').click(()=>{
+                alert($('#text-line').html())
+            })
+
+            $("#get-val-button").click(()=>{
+                alert($('#username').val())
+            })
+
+            $("#get-attr-button").click(()=>{
+                alert($("#text-line").attr("style"))
+            })
+        })
+    </script>
+    <title>jQuery</title>
+    
+</head>
+<body>
+    <p id="text-line" style="color: teal;">This <b>TEST</b> line</p>
+
+    <input type="text" name="username" id="username" value="Minhihi">
+
+    <h4>GET</h4>
+    <button id="get-text-button">Get Text</button>
+    <button id="get-html-button">Get HTML</button>
+    <button id="get-val-button">Get Value</button>
+    <button id="get-attr-button">Get Attr</button>
+</body>
+</html>
