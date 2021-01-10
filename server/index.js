@@ -1,8 +1,7 @@
 
 //  REQUIRE EXPRESSJS
 const express = require('express')
-
-const { readFile, readFileSync } = require('./controllers/home.controller')
+const path = require('path')
 
 const usersRoute = require('./routes/users.route')
 const postsRoute = require('./routes/posts.route')
@@ -24,11 +23,17 @@ app.use('/' ,(req, res, next) => {
 app.use(express.urlencoded({
   extended: true
 }))
+app.use(express.static(path.dirname(__dirname) + '/client/js'))
 
 app.get('/', (req, res) => {
   res.render('home')
 })
-
+app.get('/js/jquery-3.5.1.js', (req,res) => {
+  res.sendFile(path.dirname(__dirname) + '/client/js/jquery-3.5.1.js');
+});
+app.get('/js/jquery-post.js', (req, res) => {
+  res.sendFile(path.dirname(__dirname) + '/client/js/jquery-post.js');
+})
 app.use('/users', usersRoute)
 app.use('/posts', postsRoute)
 app.use('/login', loginRoute)

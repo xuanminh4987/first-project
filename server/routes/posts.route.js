@@ -4,16 +4,14 @@ const postsController = require("../controllers/posts.controller")
 
 router.get("/", postsController.getPosts)
 
-router.get("/:pID([1-5]{1})", postsController.getPostsByID)
+router.get('/form', postsController.getForm)
 
-router.get("/:position([a-z]{2})", postsController.getPostsByPosition)
+router.get('/:id([0-9])', postsController.getPostByID)
 
-router.post('/:pID([1-9]{1})/:position', postsController.addNewPost)
+router.post('/', postsController.pushPost)
 
-router.put('/:pID([1-5]{1})/:position([a-z]{2})', postsController.updatePositionByID)
+router.put('/:id/:content', postsController.updateContentByID)
 
-router.put('/:position([a-z]{1,2})/:pID([1-5]{1})', postsController.updateIDByPosition)
-
-router.delete('/:pID([1-5]{1})', postsController.delPostByID)
+router.delete('/:id', postsController.deletePostByID)
 
 module.exports = router
