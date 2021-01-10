@@ -4,11 +4,9 @@ html
     body
         ul
             each post in posts
-                if(post.id)
-                    li
-                        h3= post.title
-                        p= post.content
-                        p= "Author: " + post.author
-                        a(href=`/posts/${post.id}`) Read More
-        
-        a(href="/posts/form") Add Post
+                li
+                    h3= post.title
+                    p= post.content
+                    p= "Author: " + post.author
+                    a(href=`/posts/${post._id}`) Read More
+        a(href="/form") Add Post
