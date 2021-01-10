@@ -3,21 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../client/jquery-3.5.1.js"></script>
-    <script>
-        let getTiming = setInterval(()=>{
-            if(getTiming) clearInterval()
-
-            let title = $('#title').val()
-            let content = $('#content').val()
-            
-            if(title && content){
-                $('#submit').css('animation', 'scale .8s alternate infinite')
-            } else{
-                $('#submit').css('animation', 'none')
-            }
-        }, 300)
-    </script>
+    <script src="http://localhost:3000/js/jquery-3.5.1.js"></script>
+    <script src="http://localhost:3000/js/jquery-post.js"></script>
     <title>jQuery Post</title>
 </head>
 <style>
@@ -29,7 +16,7 @@
     body{
         width: 100vw;
         height: 100vh;
-        background: url('./images/bg.jpg') no-repeat;
+        background: url('https://image.winudf.com/v2/image1/Y29tLm1vYmlsZXVuaXZlcnNpdHkucHN5Y2hlZGVtaWNfc2NyZWVuXzFfMTU0NDU0MDU5NV8wNDE/screen-1.jpg?fakeurl=1&type=.jpg') no-repeat;
         background-position: center;
         background-size: cover;
     }
@@ -44,6 +31,20 @@
         z-index: -1;
         opacity: .5;
     }
+
+    h1{
+        box-sizing: border-box;
+        padding: 10px;
+        text-align: center;
+        font-size: 3em;
+        color: white;
+        text-shadow: 0 0 2px rgb(60, 90, 240),
+                     0 0 4px rgb(60, 90, 240),
+                     0 0 6px rgb(60, 90, 240),
+                     0 0 8px rgb(60, 90, 240),
+                     0 0 10px rgb(60, 90, 240);
+    }
+
     form{
         position: absolute;
         top: 50%;
@@ -111,10 +112,11 @@
     }
 </style>
 <body>
+    <h1>ADD POST FORM</h1>
     <form action="/posts" method="post">
         <label for="">Title:</label>
         <br>
-        <input type="text" name="title" id="title" placeholder="Title">
+        <input type="text" name="title" id="title" placeholder="Title...">
         <br>
         <label for="">Content:</label>
         <br>
