@@ -1,8 +1,12 @@
 html
     header
-        title Posts
+        title All Post
     body
-        h3(style= "color: tomato;")
         ul
             each post in posts
-                li(id= posts.pID)= post.position
+                li
+                    h3= post.title
+                    p= post.content
+                    p= "Author: " + post.author
+                    a(href=`/posts/${post._id}`) Read More
+        a(href="/form") Add Post

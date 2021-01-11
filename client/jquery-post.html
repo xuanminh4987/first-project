@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://localhost:3000/js/jquery-3.5.1.js"></script>
+    <script src="http://localhost:3000/js/jquery-post.js"></script>
+    <title>jQuery Post</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    body{
+        width: 100vw;
+        height: 100vh;
+        background: url('https://image.winudf.com/v2/image1/Y29tLm1vYmlsZXVuaXZlcnNpdHkucHN5Y2hlZGVtaWNfc2NyZWVuXzFfMTU0NDU0MDU5NV8wNDE/screen-1.jpg?fakeurl=1&type=.jpg') no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    body::after{
+        content: "";
+        background: black;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: .5;
+    }
+
+    h1{
+        box-sizing: border-box;
+        padding: 10px;
+        text-align: center;
+        font-size: 3em;
+        color: white;
+        text-shadow: 0 0 2px rgb(60, 90, 240),
+                     0 0 4px rgb(60, 90, 240),
+                     0 0 6px rgb(60, 90, 240),
+                     0 0 8px rgb(60, 90, 240),
+                     0 0 10px rgb(60, 90, 240);
+    }
+
+    form{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background: white;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: -2px 12px 30px -12px black;
+    }
+
+    input{
+        outline: none;
+        margin: 0 0 10px 0;
+    }
+
+    #title{
+        width: calc(100vw * 50 / 100);
+        padding: 10px;
+        border: solid .5px gray;
+        border-radius: 5px;
+    }
+
+    textarea{
+        width: calc(100vw * 50 / 100);
+        height: calc(100vh * 40 / 100);
+        padding: 10px;
+        border-radius: 5px;
+        outline: none;
+    }
+    
+    select{
+        width: 100px;
+        margin: 10px 0;
+        padding: 5px;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    #submit{
+        margin: 10px 0;
+        padding: 10px 50px;
+        border-radius: 5px;
+        border: .5px solid gray;
+        background: rgb(60, 90, 240);
+        font-size: 1em;
+        color: white;
+        cursor: pointer;
+    }
+
+    @keyframes scale{
+        0%{
+            opacity: 1;
+        }
+        100%{
+            opacity: .8;
+            transform: scale(1.1);
+        }
+    }
+
+    label{
+        color: rgb(60, 90, 240);
+        margin: 20px 0;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <h1>ADD POST FORM</h1>
+    <form action="/posts" method="post">
+        <label for="">Title:</label>
+        <br>
+        <input type="text" name="title" id="title" placeholder="Title...">
+        <br>
+        <label for="">Content:</label>
+        <br>
+        <textarea name="content" id="content" placeholder="Content..."></textarea>
+        <br>
+        <label for="">Author:</label>
+        <select name="author" id="author">
+            <option value="Minh">Minh</option>
+            <option value="Quang">Quang</option>
+        </select>
+        <br>
+        <input type="submit" id="submit" value="Post">
+    </form>
+</body>
+</html>
