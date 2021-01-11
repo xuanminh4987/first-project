@@ -27,26 +27,6 @@ function insertPost(post){
     })
 }
 
-function deletePost(id){
-    const mongodb = require('mongodb');
-    const MongoClient = mongodb.MongoClient
-    const url = 'mongodb://localhost:27017/'
-
-    MongoClient.connect(url, (err, client) => {
-        if(err) throw err
-        else{
-            console.log('Connection established to', url)
-            
-            const db = client.db('first-db')
-            const collection = db.collection('posts')
-
-            collection.remove(id)
-
-            client.close()
-        }
-    })
-}
-
 function getAllPosts(callBack){
     const mongodb = require('mongodb');
     const MongoClient = mongodb.MongoClient
