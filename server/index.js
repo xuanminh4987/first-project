@@ -2,6 +2,7 @@
 //  REQUIRE EXPRESSJS
 const express = require('express')
 const path = require('path')
+const cors = require('cors')
 
 const usersRoute = require('./routes/users.route')
 const postsRoute = require('./routes/posts.route')
@@ -16,6 +17,7 @@ const port = 3000
 app.set('view engine', 'pug')
 app.set('views', './views')
 
+app.use(cors())
 app.use('/' ,(req, res, next) => {
   console.log(`The request received at: `, new Date());
   next()

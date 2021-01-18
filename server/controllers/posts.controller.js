@@ -1,7 +1,6 @@
 //  REQUIRE
 const fs = require('fs');
 const path = require('path');
-const { post } = require('../routes/posts.route');
 
 //  CONNECT TO MONGO && INSERT NEW POST
 function insertPost(post){
@@ -102,7 +101,7 @@ function deletePostByID_db(id){
 // MODULE
 module.exports.getPosts = (req, res) => {
     getAllPosts((posts) => {
-        res.render('posts', {posts})
+        return res.json({posts})
     })
 }
 
